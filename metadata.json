@@ -1,0 +1,7 @@
+{
+  "name": "Amiés - Beauté et Style",
+  "description": "A sophisticated and elegant website for the Amiés beauty salon, featuring services, gallery, and an AI-powered beauty consultant.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
