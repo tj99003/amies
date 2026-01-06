@@ -4,10 +4,10 @@ import { Scissors, Sparkles, Hand, Heart, Star, Camera, Wand2, Flower2 } from 'l
 import { Testimonial, Service } from './types';
 
 export const SITE_CONFIG = {
-  brandName: "Amiés",
+  brandName: "Amiès",
   slogan: "Beauté et Style",
-  heroTitle: "Amiés",
-  heroSubtitle: "Donde la elegancia francesa se encuentra con tu estilo natural. Descubre la experiencia Amiés y transforma tu imagen.",
+  heroTitle: "Amiès",
+  heroSubtitle: "Donde la elegancia francesa se encuentra con tu estilo natural. Descubre la experiencia Amiès y transforma tu imagen.",
   heroBadge: "Bienvenida a la Excelencia",
   colors: {
     primary: '#8b5cf6',
@@ -18,11 +18,6 @@ export const SITE_CONFIG = {
     accent: '#f59e0b',
     background: '#faf5ff',
   },
-  header: {
-    transparentAtTop: true,
-    blurStrength: 'backdrop-blur-md',
-    textColorAtTop: 'text-purple-900',
-  },
   socialLinks: {
     instagram: 'https://instagram.com/amies.style',
     facebook: 'https://facebook.com/amies.style',
@@ -30,10 +25,21 @@ export const SITE_CONFIG = {
   }
 };
 
+export const FOOTER_CONFIG = {
+  aboutTitle: "Sobre Amiès",
+  aboutText: "Comprometidos con la excelencia y el bienestar de nuestros clientes. Amiès es más que un salón, es un espacio diseñado para reencontrarte contigo misma a través del estilo y el cuidado profesional.",
+  quickLinksTitle: "Explora",
+  hoursTitle: "Horarios de Atención",
+  locationTitle: "Nuestra Ubicación",
+  hours: [
+    { day: "Lunes - Viernes", time: "9:00 - 19:00" },
+    { day: "Sábado", time: "10:00 - 18:00" },
+    { day: "Domingo", time: "Cerrado" }
+  ]
+};
+
 export const COLORS = SITE_CONFIG.colors;
 
-// --- DICCIONARIO DE ICONOS ---
-// Si quieres usar un icono nuevo, asegúrate de que esté en esta lista.
 export const ICON_MAP: Record<string, React.ReactNode> = {
   scissors: <Scissors className="w-6 h-6" />,
   sparkles: <Sparkles className="w-6 h-6" />,
@@ -47,7 +53,7 @@ export const ICON_MAP: Record<string, React.ReactNode> = {
 
 export const CONTACT_INFO = {
   phone: '+525512345678',
-  whatsappMessage: 'Hola Amiés, me gustaría agendar una cita.',
+  whatsappMessage: 'Hola Amiès, me gustaría agendar una cita.',
   email: 'hola@amies.style',
   address: 'Av. de las Rosas 123, Ciudad de Belleza, CP 45000',
   googleMaps: 'https://maps.google.com/?q=Av.+de+las+Rosas+123+Ciudad+de+Belleza',
@@ -60,10 +66,6 @@ export const FALLBACK_IMAGES: Record<string, string> = {
   gallery: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=800"
 };
 
-// --- CONFIGURACIÓN DE SERVICIOS ---
-// Para agregar un servicio: 
-// 1. Añade la imagen a tu carpeta o usa una URL de Unsplash.
-// 2. Crea un nuevo objeto {} en esta lista.
 export const SERVICES_DATA: Service[] = [
   {
     id: "hair",
@@ -109,14 +111,13 @@ export const SERVICES_DATA: Service[] = [
     duration: "60 - 75 min",
     includes: ["Doble limpieza", "Exfoliación enzimática", "Mascarilla adaptada", "Masaje facial"]
   }
-  // ¿Quieres agregar otro? Copia el bloque de arriba aquí abajo.
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
     name: 'Mariana G.',
-    text: 'Amiés es mi lugar favorito. La atención es impecable.',
+    text: 'Amiès es mi lugar favorito. La atención es impecable.',
     rating: 5,
     avatar: 'https://i.pravatar.cc/150?u=mariana'
   },
