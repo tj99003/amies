@@ -1,13 +1,14 @@
 
 import React from 'react';
+import { FALLBACK_IMAGES } from '../constants';
 
 const IMAGES = [
-  'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1527799822341-47100b3d6517?auto=format&fit=crop&q=80&w=800',
-  'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800',
+  './images/galeria/trabajo1.jpg',
+  './images/galeria/trabajo2.jpg',
+  './images/galeria/trabajo3.jpg',
+  './images/galeria/trabajo4.jpg',
+  './images/galeria/trabajo5.jpg',
+  './images/galeria/trabajo6.jpg',
 ];
 
 const Gallery: React.FC = () => {
@@ -21,13 +22,21 @@ const Gallery: React.FC = () => {
 
         <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
           {IMAGES.map((img, idx) => (
-            <div key={idx} className="relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow group">
+            <div key={idx} className="relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-shadow group bg-purple-100">
               <img 
                 src={img} 
                 alt={`Portfolio ${idx}`} 
-                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105 min-h-[200px]"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  // Usamos el fallback de galería si el local falla
+                  const fallbackUrl = `${FALLBACK_IMAGES.gallery}&sig=${idx}`;
+                  if (target.src !== fallbackUrl) {
+                    target.src = fallbackUrl;
+                  }
+                }}
               />
-              <div className="absolute inset-0 bg-purple-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <div className="absolute inset-0 bg-purple-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
                 <span className="text-white font-serif italic text-lg border-b border-white pb-1">Beauté et Style</span>
               </div>
             </div>

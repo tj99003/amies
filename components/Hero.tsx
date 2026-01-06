@@ -1,15 +1,22 @@
 
 import React from 'react';
+import { FALLBACK_IMAGES } from '../constants';
 
 const Hero: React.FC = () => {
   return (
     <section id="inicio" className="relative h-screen flex items-center overflow-hidden">
       {/* Background with an overlay matching the logo vibe */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-purple-50">
         <img 
-          src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=2000" 
+          src="./images/brand/hero.jpg" 
           className="w-full h-full object-cover" 
           alt="Luxury Salon"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            if (target.src !== FALLBACK_IMAGES.hero) {
+              target.src = FALLBACK_IMAGES.hero;
+            }
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-purple-100/90 to-transparent"></div>
       </div>

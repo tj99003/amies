@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SERVICES } from '../constants';
+import { ICON_MAP, SERVICES_DATA, FALLBACK_IMAGES } from '../constants';
 
 const Services: React.FC = () => {
   return (
@@ -15,19 +15,25 @@ const Services: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {SERVICES.map((service) => (
+          {SERVICES_DATA.map((service) => (
             <div key={service.id} className="group relative bg-gray-50 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="h-64 overflow-hidden">
+              <div className="h-64 overflow-hidden bg-purple-50">
                 <img 
                   src={service.image} 
                   alt={service.name} 
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    if (target.src !== FALLBACK_IMAGES[service.id]) {
+                      target.src = FALLBACK_IMAGES[service.id] || FALLBACK_IMAGES.hair;
+                    }
+                  }}
                 />
               </div>
               <div className="p-6">
                 <div className="flex items-center space-x-3 mb-4">
                   <div className="p-2 bg-purple-100 rounded-lg text-amiés-purple">
-                    {service.icon}
+                    {ICON_MAP[service.iconId] || ICON_MAP.sparkles}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">{service.name}</h3>
                 </div>
