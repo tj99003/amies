@@ -10,7 +10,6 @@ export const COLORS = {
   background: '#faf5ff',
 };
 
-// Mapa para convertir strings del JSON en componentes de Lucide
 export const ICON_MAP: Record<string, React.ReactNode> = {
   scissors: <Scissors className="w-6 h-6" />,
   sparkles: <Sparkles className="w-6 h-6" />,
@@ -28,9 +27,9 @@ export const CONTACT_INFO = {
   logo: './images/brand/logo.png'
 };
 
-// Fallbacks de alta calidad para cuando las imágenes locales no existan (Preview mode)
+// Imágenes de respaldo profesionales de alta resolución
 export const FALLBACK_IMAGES: Record<string, string> = {
-  hero: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=2000",
+  hero: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=2000",
   hair: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800",
   color: "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&q=80&w=800",
   nails: "https://images.unsplash.com/photo-1604654894610-df490998700d?auto=format&fit=crop&q=80&w=800",
