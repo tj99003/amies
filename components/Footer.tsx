@@ -1,6 +1,13 @@
 
 import React from 'react';
-import { Instagram, Facebook, Twitter, MapPin, Phone, Mail, Scissors } from 'lucide-react';
+import { Instagram, Facebook, MapPin, Phone, Mail, Scissors, Navigation } from 'lucide-react';
+import { SITE_CONFIG, CONTACT_INFO } from '../constants';
+
+const XIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.486 3.24H4.298l13.311 17.407z" />
+  </svg>
+);
 
 const Footer: React.FC = () => {
   return (
@@ -12,20 +19,20 @@ const Footer: React.FC = () => {
               <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
                 <Scissors className="text-white w-6 h-6" />
               </div>
-              <span className="text-2xl font-serif font-bold">Amiés</span>
+              <span className="text-2xl font-serif font-bold">{SITE_CONFIG.brandName}</span>
             </div>
             <p className="text-purple-200 leading-relaxed mb-6">
-              Comprometidos con la excelencia y el bienestar de nuestros clientes. Amiés es más que un salón, es un espacio para reencontrarte contigo misma.
+              Comprometidos con la excelencia y el bienestar de nuestros clientes. {SITE_CONFIG.brandName} es más que un salón, es un espacio para reencontrarte contigo misma.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+              <a href={SITE_CONFIG.socialLinks.instagram} target="_blank" rel="noopener" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+              <a href={SITE_CONFIG.socialLinks.facebook} target="_blank" rel="noopener" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                <Twitter size={20} />
+              <a href={SITE_CONFIG.socialLinks.x} target="_blank" rel="noopener" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors" title="Síguenos en X">
+                <XIcon size={18} />
               </a>
             </div>
           </div>
@@ -63,22 +70,45 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-purple-200">
               <li className="flex items-start space-x-3">
                 <MapPin className="mt-1 flex-shrink-0" size={18} />
-                <span>Av. de las Rosas 123, <br />Ciudad de Belleza, CP 45000</span>
+                <span>{CONTACT_INFO.address}</span>
               </li>
-              <li className="flex items-center space-x-3">
+              <li className="pt-2 flex flex-col gap-3">
+                <p className="text-xs uppercase font-bold tracking-widest text-purple-400">¿Cómo llegar?</p>
+                <div className="flex gap-4">
+                   <a 
+                    href={CONTACT_INFO.googleMaps} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs bg-white/5 hover:bg-white/15 px-3 py-2 rounded-lg transition-all border border-white/10"
+                   >
+                     <img src="https://www.gstatic.com/images/branding/product/2x/maps_96in128dp.png" className="w-4 h-4" alt="Maps" />
+                     Google Maps
+                   </a>
+                   <a 
+                    href={CONTACT_INFO.waze} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-xs bg-white/5 hover:bg-white/15 px-3 py-2 rounded-lg transition-all border border-white/10"
+                   >
+                     <Navigation size={14} className="text-blue-400" />
+                     Waze
+                   </a>
+                </div>
+              </li>
+              <li className="flex items-center space-x-3 pt-4">
                 <Phone size={18} />
-                <span>+52 (55) 1234-5678</span>
+                <span>{CONTACT_INFO.phone}</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} />
-                <span>hola@amies.style</span>
+                <span>{CONTACT_INFO.email}</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-purple-300">
-          <p>© {new Date().getFullYear()} Amiés - Beauté et Style. Todos los derechos reservados.</p>
+          <p>© {new Date().getFullYear()} {SITE_CONFIG.brandName} - {SITE_CONFIG.slogan}. Todos los derechos reservados.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-white">Privacidad</a>
             <a href="#" className="hover:text-white">Términos</a>
