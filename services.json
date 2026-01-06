@@ -1,4 +1,3 @@
-
 [
   {
     "id": "hair",
@@ -6,7 +5,7 @@
     "description": "Transformamos tu look con las últimas tendencias en cortes y peinados personalizados.",
     "price": "Desde $350",
     "iconId": "scissors",
-    "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800"
+    "image": "./images/servicios/corte.png"
   },
   {
     "id": "color",
@@ -14,7 +13,7 @@
     "description": "Balayage, luces y tintes con productos de alta gama que cuidan tu cabello.",
     "price": "Desde $1,200",
     "iconId": "sparkles",
-    "image": "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&q=80&w=800"
+    "image": "./images/servicios/color.png"
   },
   {
     "id": "nails",
@@ -22,7 +21,7 @@
     "description": "Cuidado experto para tus manos y pies con acabados impecables y duraderos.",
     "price": "Desde $250",
     "iconId": "hand",
-    "image": "https://images.unsplash.com/photo-1604654894610-df490998700d?auto=format&fit=crop&q=80&w=800"
+    "image": "./images/servicios/unas.png"
   },
   {
     "id": "skincare",
@@ -30,6 +29,6 @@
     "description": "Tratamientos hidratantes y rejuvenecedores para resaltar tu belleza natural.",
     "price": "Desde $800",
     "iconId": "heart",
-    "image": "https://images.unsplash.com/photo-1570172619240-39499899f193?auto=format&fit=crop&q=80&w=800"
+    "image": "./images/servicios/facial.png"
   }
 ]
