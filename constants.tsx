@@ -45,7 +45,7 @@ export const SERVICES_DATA: Service[] = [
     "description": "Transformamos tu look con las últimas tendencias en cortes y peinados personalizados.",
     "price": "Desde $350",
     "iconId": "scissors",
-    "image": "./images/servicios/corte.jpg"
+    "image": "./images/servicios/corte.png"
   },
   {
     "id": "color",
@@ -53,7 +53,7 @@ export const SERVICES_DATA: Service[] = [
     "description": "Balayage, luces y tintes con productos de alta gama que cuidan tu cabello.",
     "price": "Desde $1,200",
     "iconId": "sparkles",
-    "image": "./images/servicios/color.jpg"
+    "image": "./images/servicios/color.png"
   },
   {
     "id": "nails",
@@ -61,7 +61,7 @@ export const SERVICES_DATA: Service[] = [
     "description": "Cuidado experto para tus manos y pies con acabados impecables y duraderos.",
     "price": "Desde $250",
     "iconId": "hand",
-    "image": "./images/servicios/unas.jpg"
+    "image": "./images/servicios/unas.png"
   },
   {
     "id": "skincare",
@@ -69,7 +69,7 @@ export const SERVICES_DATA: Service[] = [
     "description": "Tratamientos hidratantes y rejuvenecedores para resaltar tu belleza natural.",
     "price": "Desde $800",
     "iconId": "heart",
-    "image": "./images/servicios/facial.jpg"
+    "image": "./images/servicios/facial.png"
   }
 ];
 
