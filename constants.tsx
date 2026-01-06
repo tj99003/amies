@@ -1,13 +1,21 @@
 
 import React from 'react';
 import { Scissors, Sparkles, Hand, Heart } from 'lucide-react';
-import { Service, Testimonial } from './types';
+import { Testimonial } from './types';
 
 export const COLORS = {
-  primary: '#8b5cf6', // Lavender purple
+  primary: '#8b5cf6',
   secondary: '#d8b4fe',
-  accent: '#f59e0b', // Gold
+  accent: '#f59e0b',
   background: '#faf5ff',
+};
+
+// Mapa para convertir strings del JSON en componentes de Lucide
+export const ICON_MAP: Record<string, React.ReactNode> = {
+  scissors: <Scissors className="w-6 h-6" />,
+  sparkles: <Sparkles className="w-6 h-6" />,
+  hand: <Hand className="w-6 h-6" />,
+  heart: <Heart className="w-6 h-6" />,
 };
 
 export const CONTACT_INFO = {
@@ -18,41 +26,6 @@ export const CONTACT_INFO = {
   instagram: 'https://instagram.com/amies.style',
   facebook: 'https://facebook.com/amies.style'
 };
-
-export const SERVICES: Service[] = [
-  {
-    id: 'hair',
-    name: 'Corte y Estilo',
-    description: 'Transformamos tu look con las últimas tendencias en cortes y peinados personalizados.',
-    price: 'Desde $350',
-    icon: <Scissors className="w-6 h-6" />,
-    image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'color',
-    name: 'Colorimetría',
-    description: 'Balayage, luces y tintes con productos de alta gama que cuidan tu cabello.',
-    price: 'Desde $1,200',
-    icon: <Sparkles className="w-6 h-6" />,
-    image: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'nails',
-    name: 'Manicura y Pedicura',
-    description: 'Cuidado experto para tus manos y pies con acabados impecables y duraderos.',
-    price: 'Desde $250',
-    icon: <Hand className="w-6 h-6" />,
-    image: 'https://images.unsplash.com/photo-1604654894610-df490998700d?auto=format&fit=crop&q=80&w=800'
-  },
-  {
-    id: 'skincare',
-    name: 'Cuidado Facial',
-    description: 'Tratamientos hidratantes y rejuvenecedores para resaltar tu belleza natural.',
-    price: 'Desde $800',
-    icon: <Heart className="w-6 h-6" />,
-    image: 'https://images.unsplash.com/photo-1570172619240-39499899f193?auto=format&fit=crop&q=80&w=800'
-  }
-];
 
 export const TESTIMONIALS: Testimonial[] = [
   {

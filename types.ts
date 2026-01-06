@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export interface Service {
@@ -5,7 +6,7 @@ export interface Service {
   name: string;
   description: string;
   price: string;
-  icon: React.ReactNode;
+  iconId: string;
   image: string;
 }
 
