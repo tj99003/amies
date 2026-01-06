@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Scissors, Sparkles, Hand, Heart } from 'lucide-react';
-import { Testimonial } from './types';
+import { Testimonial, Service } from './types';
 
 export const COLORS = {
   primary: '#8b5cf6',
@@ -26,6 +26,42 @@ export const CONTACT_INFO = {
   instagram: 'https://instagram.com/amies.style',
   facebook: 'https://facebook.com/amies.style'
 };
+
+// EDITAR AQUÍ: Lista de servicios, precios e imágenes
+export const SERVICES_DATA: Service[] = [
+  {
+    "id": "hair",
+    "name": "Corte y Estilo",
+    "description": "Transformamos tu look con las últimas tendencias en cortes y peinados personalizados.",
+    "price": "Desde $350",
+    "iconId": "scissors",
+    "image": "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "color",
+    "name": "Colorimetría",
+    "description": "Balayage, luces y tintes con productos de alta gama que cuidan tu cabello.",
+    "price": "Desde $1,200",
+    "iconId": "sparkles",
+    "image": "https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "nails",
+    "name": "Manicura y Pedicura",
+    "description": "Cuidado experto para tus manos y pies con acabados impecables y duraderos.",
+    "price": "Desde $250",
+    "iconId": "hand",
+    "image": "https://images.unsplash.com/photo-1604654894610-df490998700d?auto=format&fit=crop&q=80&w=800"
+  },
+  {
+    "id": "skincare",
+    "name": "Cuidado Facial",
+    "description": "Tratamientos hidratantes y rejuvenecedores para resaltar tu belleza natural.",
+    "price": "Desde $800",
+    "iconId": "heart",
+    "image": "https://images.unsplash.com/photo-1570172619240-39499899f193?auto=format&fit=crop&q=80&w=800"
+  }
+];
 
 export const TESTIMONIALS: Testimonial[] = [
   {

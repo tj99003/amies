@@ -1,49 +1,8 @@
 
-import React, { useState, useEffect } from 'react';
-import { ICON_MAP } from '../constants';
-import { Service } from '../types';
-import { Loader2 } from 'lucide-react';
+import React from 'react';
+import { ICON_MAP, SERVICES_DATA } from '../constants';
 
 const Services: React.FC = () => {
-  const [services, setServices] = useState<Service[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const response = await fetch('./services.json');
-        if (!response.ok) throw new Error('No se pudieron cargar los servicios');
-        const data = await response.json();
-        setServices(data);
-      } catch (err) {
-        setError('Error al cargar la lista de servicios.');
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchServices();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="py-24 flex flex-col items-center justify-center bg-white">
-        <Loader2 className="w-10 h-10 text-amiés-purple animate-spin mb-4" />
-        <p className="text-gray-500 italic">Cargando servicios...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="py-24 text-center bg-white">
-        <p className="text-red-500">{error}</p>
-      </div>
-    );
-  }
-
   return (
     <section id="servicios" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -56,7 +15,7 @@ const Services: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service) => (
+          {SERVICES_DATA.map((service) => (
             <div key={service.id} className="group relative bg-gray-50 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="h-64 overflow-hidden">
                 <img 
