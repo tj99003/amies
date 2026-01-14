@@ -7,8 +7,8 @@ export const SITE_CONFIG = {
   brandName: "Amiès",
   slogan: "Beauté et Style",
   heroTitle: "Amiès",
-  heroSubtitle: "Donde la elegancia francesa se encuentra con tu estilo natural. Descubre la experiencia Amiès y transforma tu imagen.",
-  heroBadge: "Bienvenida a la Excelencia",
+  heroSubtitle: "Donde la belleza florece entre amigas. En Amiés queremos que te sientas cómoda, tranquila y libre de ser tú misma. Este es tu momento, tu lugar ",
+  heroBadge: "Bienvenida a",
   colors: {
     primary: '#8b5cf6',
     primaryDark: '#6d28d9',
@@ -19,9 +19,9 @@ export const SITE_CONFIG = {
     background: '#faf5ff',
   },
   socialLinks: {
-    instagram: 'https://instagram.com/amies.style',
-    facebook: 'https://facebook.com/amies.style',
-    x: 'https://x.com/amies_style'
+    instagram: 'https://www.instagram.com/amies_beautestyle',
+    facebook: 'https://www.facebook.com/61577682820357',
+    tiktok: 'https://www.tiktok.com/@amis.beaut.et.sty'
   }
 };
 
@@ -32,9 +32,7 @@ export const FOOTER_CONFIG = {
   hoursTitle: "Horarios de Atención",
   locationTitle: "Nuestra Ubicación",
   hours: [
-    { day: "Lunes - Viernes", time: "9:00 - 19:00" },
-    { day: "Sábado", time: "10:00 - 18:00" },
-    { day: "Domingo", time: "Cerrado" }
+    { day: "Lunes a Sábado", time: "9:00 am - 06:00 pm" }
   ]
 };
 
@@ -52,13 +50,14 @@ export const ICON_MAP: Record<string, React.ReactNode> = {
 };
 
 export const CONTACT_INFO = {
-  phone: '+525512345678',
+  phone: '6989-7889',
+  whatsappNumber: '50369897829',
   whatsappMessage: 'Hola Amiès, me gustaría agendar una cita.',
-  email: 'hola@amies.style',
-  address: 'Av. de las Rosas 123, Ciudad de Belleza, CP 45000',
-  googleMaps: 'https://maps.google.com/?q=Av.+de+las+Rosas+123+Ciudad+de+Belleza',
-  waze: 'https://waze.com/ul?q=Av.+de+las+Rosas+123+Ciudad+de+Belleza',
-  logo: null 
+  email: 'amiesbeauteetstyle@gmail.com',
+  address: 'Condominio Los Héroes, Local 2k. Boulevard de Los Héroes., San Salvador, El Salvador',
+  googleMaps: 'https://maps.app.goo.gl/NgG543eJNJZRzSE79',
+  waze: 'https://ul.waze.com/ul?ll=13.71205953%2C-89.20725703&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location',
+  logo: null
 };
 
 export const FALLBACK_IMAGES: Record<string, string> = {

@@ -3,9 +3,9 @@ import React from 'react';
 import { Instagram, Facebook, MapPin, Phone, Mail, Scissors, Navigation } from 'lucide-react';
 import { SITE_CONFIG, CONTACT_INFO, FOOTER_CONFIG } from '../constants';
 
-const XIcon = ({ size = 20 }: { size?: number }) => (
+const TikTokIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.494h2.039L6.486 3.24H4.298l13.311 17.407z" />
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
   </svg>
 );
 
@@ -31,8 +31,8 @@ const Footer: React.FC = () => {
               <a href={SITE_CONFIG.socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href={SITE_CONFIG.socialLinks.x} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
-                <XIcon size={18} />
+              <a href={(SITE_CONFIG.socialLinks as any).tiktok} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors">
+                <TikTokIcon size={18} />
               </a>
             </div>
           </div>
@@ -69,24 +69,24 @@ const Footer: React.FC = () => {
               <li className="pt-2">
                 <p className="text-[10px] uppercase font-bold tracking-widest text-purple-400 mb-3">Navegación Directa</p>
                 <div className="flex flex-wrap gap-2">
-                   <a 
-                    href={CONTACT_INFO.googleMaps} 
-                    target="_blank" 
+                  <a
+                    href={CONTACT_INFO.googleMaps}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-xs bg-white/5 hover:bg-white/15 px-3 py-2 rounded-lg transition-all border border-white/10"
-                   >
-                     <img src="https://www.gstatic.com/images/branding/product/2x/maps_96in128dp.png" className="w-4 h-4" alt="Maps" />
-                     Maps
-                   </a>
-                   <a 
-                    href={CONTACT_INFO.waze} 
-                    target="_blank" 
+                  >
+                    <img src="https://www.gstatic.com/images/branding/product/2x/maps_96in128dp.png" className="w-4 h-4" alt="Maps" />
+                    Maps
+                  </a>
+                  <a
+                    href={CONTACT_INFO.waze}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-xs bg-white/5 hover:bg-white/15 px-3 py-2 rounded-lg transition-all border border-white/10"
-                   >
-                     <Navigation size={14} className="text-blue-400" />
-                     Waze
-                   </a>
+                  >
+                    <Navigation size={14} className="text-blue-400" />
+                    Waze
+                  </a>
                 </div>
               </li>
               <li className="flex items-center space-x-3 pt-4">

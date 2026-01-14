@@ -9,7 +9,7 @@ const Services: React.FC = () => {
 
   const handleBook = (serviceName: string) => {
     const message = `Hola Amiés, me interesa agendar el servicio de: ${serviceName}.`;
-    const whatsappUrl = `https://wa.me/${CONTACT_INFO.phone.replace(/\+/g, '')}?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=${CONTACT_INFO.whatsappNumber}&text=${encodeURIComponent(message).replace(/%20/g, '+')}&type=phone_number&app_absent=0`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -26,14 +26,14 @@ const Services: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {SERVICES_DATA.map((service) => (
-            <div 
-              key={service.id} 
+            <div
+              key={service.id}
               className="group bg-gray-50 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col"
             >
               <div className="h-64 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.name} 
+                <img
+                  src={service.image}
+                  alt={service.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
@@ -49,7 +49,7 @@ const Services: React.FC = () => {
                 </p>
                 <div className="flex justify-between items-center pt-4 border-t border-gray-100">
                   <span className="text-amiés-purple font-bold">{service.price}</span>
-                  <button 
+                  <button
                     onClick={() => setSelectedService(service)}
                     className="text-xs font-bold uppercase tracking-widest text-purple-400 hover:text-purple-600 transition-colors"
                   >
@@ -63,15 +63,15 @@ const Services: React.FC = () => {
       </div>
 
       {selectedService && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
           onClick={() => setSelectedService(null)}
         >
-          <div 
+          <div
             className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
             onClick={(e) => e.stopPropagation()}
           >
-            <button 
+            <button
               onClick={() => setSelectedService(null)}
               className="absolute top-4 right-4 p-2 bg-white/80 rounded-full text-gray-500 hover:text-purple-600 z-10"
             >
@@ -80,16 +80,16 @@ const Services: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="h-64 md:h-full">
-                <img 
-                  src={selectedService.image} 
-                  alt={selectedService.name} 
+                <img
+                  src={selectedService.image}
+                  alt={selectedService.name}
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-8">
                 <h3 className="text-3xl font-serif font-bold text-gray-900 mb-2">{selectedService.name}</h3>
                 <p className="text-amiés-purple font-bold text-lg mb-4">{selectedService.price}</p>
-                
+
                 <div className="flex items-center gap-2 text-gray-500 text-sm mb-6">
                   <Clock className="w-4 h-4" />
                   <span>Duración: {selectedService.duration || 'N/A'}</span>
@@ -113,7 +113,7 @@ const Services: React.FC = () => {
                   </div>
                 )}
 
-                <button 
+                <button
                   onClick={() => handleBook(selectedService.name)}
                   className="w-full bg-amiés-purple text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-purple-700 transition-all"
                 >
