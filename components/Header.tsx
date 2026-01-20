@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { CONTACT_INFO, SITE_CONFIG } from '../constants';
+import { CONTACT_INFO, SITE_CONFIG, NAV_LINKS } from '../constants';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,14 +14,6 @@ const Header: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: 'Inicio', href: '#inicio' },
-    { name: 'Servicios', href: '#servicios' },
-    { name: 'Galería', href: '#galeria' },
-    { name: 'Consultora AI', href: '#ai' },
-    { name: 'Contacto', href: '#contacto' },
-  ];
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${
@@ -48,7 +40,7 @@ const Header: React.FC = () => {
           </div>
 
           <nav className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
@@ -76,7 +68,7 @@ const Header: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white/95 backdrop-blur-xl shadow-2xl">
           <div className="px-4 pt-4 pb-6 space-y-2">
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <a
                 key={link.name}
                 href={link.href}

@@ -40,10 +40,9 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-bold mb-6">{FOOTER_CONFIG.quickLinksTitle}</h4>
             <ul className="space-y-4 text-purple-200 text-sm">
-              <li><a href="#inicio" className="hover:text-white transition-colors">Inicio</a></li>
-              <li><a href="#servicios" className="hover:text-white transition-colors">Servicios</a></li>
-              <li><a href="#galeria" className="hover:text-white transition-colors">Galería</a></li>
-              <li><a href="#ai" className="hover:text-white transition-colors">Consultora AI</a></li>
+              {FOOTER_CONFIG.quickLinks.map((link, index) => (
+                <li key={index}><a href={link.href} className="hover:text-white transition-colors">{link.name}</a></li>
+              ))}
             </ul>
           </div>
 
@@ -91,22 +90,18 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3 pt-4">
                 <Phone size={18} className="text-purple-400" />
-                <span>{CONTACT_INFO.phone}</span>
+                <a href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`} className="hover:text-white transition-colors">{CONTACT_INFO.phone}</a>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-purple-400" />
-                <span>{CONTACT_INFO.email}</span>
+                <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-white transition-colors">{CONTACT_INFO.email}</a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-purple-300">
+        <div className="border-t border-white/10 pt-8 flex justify-center items-center text-xs text-purple-300">
           <p>© {new Date().getFullYear()} {SITE_CONFIG.brandName} - {SITE_CONFIG.slogan}.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">Aviso de Privacidad</a>
-            <a href="#" className="hover:text-white">Términos y Condiciones</a>
-          </div>
         </div>
       </div>
     </footer>

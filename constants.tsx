@@ -1,22 +1,22 @@
 
 import React from 'react';
-import { Scissors, Sparkles, Hand, Heart, Star, Camera, Wand2, Flower2 } from 'lucide-react';
+import { Scissors, Sparkles, Hand, Heart, Star, Camera, Wand2, Flower2, Palette, Eye, PenTool } from 'lucide-react';
 import { Testimonial, Service } from './types';
 
 export const SITE_CONFIG = {
   brandName: "Amiès",
   slogan: "Beauté et Style",
   heroTitle: "Amiès",
-  heroSubtitle: "Donde la belleza florece entre amigas. En Amiés queremos que te sientas cómoda, tranquila y libre de ser tú misma. Este es tu momento, tu lugar ",
+  heroSubtitle: <>Donde la belleza florece entre amigas.<br />En Amiés queremos que te sientas cómoda, tranquila y libre de ser tú misma. Este es tu momento, tu lugar </>,
   heroBadge: "Bienvenida a",
   colors: {
-    primary: '#8b5cf6',
-    primaryDark: '#6d28d9',
-    secondary: '#d8b4fe',
-    textDark: '#1e1b4b',
-    textLight: '#4b5563',
-    accent: '#f59e0b',
-    background: '#faf5ff',
+    primary: '#B794F4',     // Lavanda suave (Delicado y femenino)
+    primaryDark: '#9F7AEA', // Un tono más intenso para interacciones
+    secondary: '#E9D8FD',   // Fondo secundario muy suave
+    textDark: '#4A306D',    // Texto oscuro (Berenjena profundo, más suave que el negro)
+    textLight: '#718096',   // Gris neutro para textos secundarios
+    accent: '#D4AF37',      // Dorado metálico (Elegancia y lujo)
+    background: '#FFFCF9',  // Blanco cálido / Marfil (Más acogedor que el blanco puro)
   },
   socialLinks: {
     instagram: 'https://www.instagram.com/amies_beautestyle',
@@ -25,10 +25,22 @@ export const SITE_CONFIG = {
   }
 };
 
+export const NAV_LINKS = [
+  { name: 'Inicio', href: '#inicio' },
+  { name: 'Servicios', href: '#servicios' },
+  { name: 'Galería', href: '#galeria' },
+  { name: 'Contacto', href: '#contacto' },
+];
+
 export const FOOTER_CONFIG = {
   aboutTitle: "Sobre Amiès",
   aboutText: "Comprometidos con la excelencia y el bienestar de nuestros clientes. Amiès es más que un salón, es un espacio diseñado para reencontrarte contigo misma a través del estilo y el cuidado profesional.",
   quickLinksTitle: "Explora",
+  quickLinks: [
+    { name: 'Inicio', href: '#inicio' },
+    { name: 'Servicios', href: '#servicios' },
+    { name: 'Galería', href: '#galeria' }
+  ],
   hoursTitle: "Horarios de Atención",
   locationTitle: "Nuestra Ubicación",
   hours: [
@@ -47,6 +59,9 @@ export const ICON_MAP: Record<string, React.ReactNode> = {
   camera: <Camera className="w-6 h-6" />,
   wand: <Wand2 className="w-6 h-6" />,
   flower: <Flower2 className="w-6 h-6" />,
+  palette: <Palette className="w-6 h-6" />,
+  eye: <Eye className="w-6 h-6" />,
+  'pen-tool': <PenTool className="w-6 h-6" />,
 };
 
 export const CONTACT_INFO = {
@@ -57,59 +72,98 @@ export const CONTACT_INFO = {
   address: 'Condominio Los Héroes, Local 2k. Boulevard de Los Héroes., San Salvador, El Salvador',
   googleMaps: 'https://maps.app.goo.gl/NgG543eJNJZRzSE79',
   waze: 'https://ul.waze.com/ul?ll=13.71205953%2C-89.20725703&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location',
-  logo: null
+  logo: '/logo.jpg' // Ruta al archivo en la carpeta public
 };
 
 export const FALLBACK_IMAGES: Record<string, string> = {
-  hero: "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=2000",
+  hero: "/images/lookbook/image_2.jpeg",
   gallery: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=800"
 };
 
 export const SERVICES_DATA: Service[] = [
-  {
-    id: "hair",
-    name: "Corte y Estilo",
-    description: "Transformamos tu look con las últimas tendencias en cortes personalizados.",
-    longDescription: "Nuestro equipo de estilistas expertos analiza la fisonomía de tu rostro y la textura de tu cabello para crear un diseño exclusivo. Utilizamos técnicas de vanguardia que garantizan un crecimiento sano.",
-    price: "Desde $350",
-    iconId: "scissors", // Debe coincidir con una clave en ICON_MAP
-    image: "./images/servicios/corte.png",
-    duration: "45 - 60 min",
-    includes: ["Diagnóstico capilar", "Masaje craneal", "Corte de precisión", "Peinado final"]
-  },
-  {
-    id: "color",
-    name: "Colorimetría",
-    description: "Balayage, luces y tintes con productos de alta gama que cuidan tu cabello.",
-    longDescription: "Especialistas en la creación de matices y dimensiones. Protegemos la integridad de tu fibra capilar con tratamientos de enlace integrados.",
-    price: "Desde $1,200",
-    iconId: "sparkles",
-    image: "./images/servicios/color.png",
-    duration: "2 - 4 horas",
-    includes: ["Prueba de mechón", "Coloración premium", "Tratamiento de brillo"]
-  },
-  {
-    id: "nails",
-    name: "Manicura y Pedicura",
-    description: "Cuidado experto para tus manos y pies con acabados impecables.",
-    longDescription: "Una experiencia de spa completa. Utilizamos esmaltes de larga duración libres de tóxicos y técnicas de limpieza profunda.",
-    price: "Desde $250",
-    iconId: "hand",
-    image: "./images/servicios/unas.png",
-    duration: "40 - 90 min",
-    includes: ["Exfoliación", "Limpieza de cutícula", "Esmaltado en gel", "Hidratación"]
-  },
-  {
-    id: "skincare",
-    name: "Cuidado Facial",
-    description: "Tratamientos hidratantes y rejuvenecedores para tu piel.",
-    longDescription: "Protocolos faciales diseñados para restaurar la luminosidad y vitalidad. Combinamos dermo-cosmética de lujo.",
-    price: "Desde $800",
-    iconId: "heart",
-    image: "./images/servicios/facial.png",
-    duration: "60 - 75 min",
-    includes: ["Doble limpieza", "Exfoliación enzimática", "Mascarilla adaptada", "Masaje facial"]
-  }
+    {
+        id: "cabello",
+        name: "Cabina de Cabello",
+        description: "Expertos en color y cuidado capilar.",
+        longDescription: "Desde tintes tradicionales y fantasía hasta alisados y tratamientos intensivos. Nuestros estilistas te ayudarán a encontrar el look perfecto que resalte tu belleza natural y cuide la salud de tu cabello.",
+        price: "",
+        iconId: "scissors",
+        image: "/images/servicios/color.png",
+        duration: "Variable",
+        includes: [
+            "Tintes (tradicionales y fantasía)",
+            "Alisados",
+            "Cortes",
+            "Peinados",
+            "Tratamientos intensivos",
+            "Repolarización capilar"
+        ]
+    },
+    {
+        id: "unas",
+        name: "Uñas",
+        description: "Diseños únicos y cuidado profesional.",
+        longDescription: "Luce unas manos espectaculares con nuestros servicios de uñas. Ofrecemos desde uñas acrílicas y softgel hasta esmaltado permanente con diseños creativos y elegantes.",
+        price: "",
+        iconId: "palette",
+        image: "/images/servicios/unas.png",
+        duration: "Variable",
+        includes: [
+            "Uñas acrílicas",
+            "Uñas softgel",
+            "Baño de acrílico",
+            "Esmaltado permanente",
+            "Aplicación de rubber"
+        ]
+    },
+    {
+        id: "manos-pies",
+        name: "Manos & Pies",
+        description: "Relax y bienestar para tus extremidades.",
+        longDescription: "Relájate con nuestros tratamientos de spa para manos y pies. Desde manicure y pedicure clínico hasta masajes de reflexología podal para un bienestar completo.",
+        price: "",
+        iconId: "hand",
+        image: "/images/lookbook/image_10.jpeg",
+        duration: "Variable",
+        includes: [
+            "Manicure spa",
+            "Manicure spa con masaje de reflexología",
+            "Pedicure clínico",
+            "Pedicure spa",
+            "Masaje de reflexología podal",
+            "Acripie"
+        ]
+    },
+    {
+        id: "pestanas",
+        name: "Pestañas",
+        description: "Realza tu mirada con naturalidad.",
+        longDescription: "Consigue una mirada de impacto con nuestros servicios de pestañas. Ofrecemos extensiones para más volumen y lifting para una curvatura natural y duradera.",
+        price: "",
+        iconId: "eye",
+        image: "/images/servicios/pesta.jpeg",
+        duration: "Variable",
+        includes: [
+            "Extensiones de pestañas",
+            "Lifting de pestañas",
+            "Lifting de pestañas + tinte"
+        ]
+    },
+    {
+        id: "cejas",
+        name: "Cejas",
+        description: "Marco perfecto para tu rostro.",
+        longDescription: "Define y perfecciona tus cejas con nuestros servicios de diseño, laminado y pigmentación. Unas cejas bien cuidadas son el marco perfecto para tu rostro.",
+        price: "",
+        iconId: "pen-tool",
+        image: "/images/servicios/cejas.jpeg",
+        duration: "Variable",
+        includes: [
+            "Diseño de cejas",
+            "Laminado de cejas",
+            "Pigmentación de cejas"
+        ]
+    }
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -128,3 +182,29 @@ export const TESTIMONIALS: Testimonial[] = [
     avatar: 'https://i.pravatar.cc/150?u=carla'
   }
 ];
+
+export const GALLERY_CONFIG = {
+  media: [
+    { type: 'image', src: '/images/lookbook/image_1.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_2.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_3.jpeg' },
+    { type: 'video', src: '/images/lookbook/video_1.mp4' },
+    { type: 'image', src: '/images/lookbook/image_4.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_5.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_6.jpeg' },
+    { type: 'video', src: '/images/lookbook/video_2.mp4' },
+    { type: 'image', src: '/images/lookbook/image_7.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_8.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_9.jpeg' },
+    { type: 'video', src: '/images/lookbook/video_3.mp4' },
+    { type: 'image', src: '/images/lookbook/image_10.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_11.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_12.jpeg' },
+    { type: 'video', src: '/images/lookbook/video_4.mp4' },
+    { type: 'image', src: '/images/lookbook/image_13.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_14.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_15.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_16.jpeg' },
+    { type: 'image', src: '/images/lookbook/image_17.jpeg' },
+  ]
+};
